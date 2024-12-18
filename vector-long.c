@@ -33,7 +33,7 @@ int main(){
 
 	check_sum(Z1, Z2);
 
-	printf("Golden_cycles: %llu\nIntrinsics_cycles: %llu\n", cycles_golden, cycles_intrinsics);
+	printf("Golden_cycles: %lu\nIntrinsics_cycles: %lu\n", cycles_golden, cycles_intrinsics);
 
 return 0;
 }

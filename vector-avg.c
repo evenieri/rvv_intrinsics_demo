@@ -5,7 +5,7 @@
 
 #include <riscv_vector.h>
 #define N 16384
-#define M 128
+#define M 127
 
 void golden_avg(uint8_t * a, uint32_t * c);
 void intrinsics_avg(uint8_t * a, uint32_t * c);
@@ -16,7 +16,7 @@ uint64_t start, end, cycles_golden, cycles_intrinsics;
 int main(){
 	
 
-	uint8_t X[N];
+	uint8_t * X = malloc(N * sizeof(uint8_t));
 	srand((unsigned int)time(NULL));
 	for(int i = 0; i < N; i++){
 		X[i] = rand() % M;

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #include <riscv_vector.h>
-#define N 2048
+#define N 10000000
 
 
 void fill_random(uint8_t *vec, size_t length, int min, int max);
@@ -15,11 +15,11 @@ uint64_t start, end, cycles_golden, cycles_intrinsics;
 
 int main(){
 
-	uint8_t X[N];
-	uint8_t Y[N]; 
-	uint8_t Z1[N] = {0};
-	uint8_t Z2[N] = {0};
-
+	uint8_t * X  = malloc(N * sizeof(uint8_t));
+	uint8_t * Y  = malloc(N * sizeof(uint8_t));
+	uint8_t * Z1 = malloc(N * sizeof(uint8_t));  
+	uint8_t * Z2 = malloc(N * sizeof(uint8_t));
+	
 	srand((unsigned int)time(NULL));
 	fill_random(X, N, 0, 127);
 	fill_random(Y, N, 0, 127);

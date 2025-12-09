@@ -53,10 +53,7 @@ void golden_gemv(float * m, float * v, float * r, size_t rows, size_t cols){
 void intrinsics_gemv(float * m, float * v, float * r, size_t rows, size_t cols){
 	start = clock(); //do not touch, performance monitoring
 
-
-//put here your code
-
-
+//your code here
 
 	end = clock(); //do not touch, performance monitoring
 	cycles_intrinsics = end-start; //do not touch
@@ -66,7 +63,7 @@ void check_gemv (float * v1, float * v2, size_t length){
        	size_t i = 0;
 
 	for(i; i < length; i++){
-	check += v1 - v2;
+		if(v1[i] - v2[i] > 1e-3) check = 1;
 	}
 
 	if(check) printf("Error :/\n");
